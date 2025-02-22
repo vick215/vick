@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="Style.css">
+        
+        <title>
+                 Calculator
+         </title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="calculator">
+                <input type="text" placeholder="0" id="output-Screen">
+                <button onclick="Clea()">Cl</button>
+                <button onclick="del()">Del</button>
+                <button onclick="Clear('%')">%</button>
+                <button onclick="Clear('/')">/</button>
+                <button onclick="Clear('7')">7</button>
+                <button onclick="Clear('8')">8</button>
+                <button onclick="Clear('9')">9</button>
+                <button onclick="Clear('*')">*</button>
+                <button onclick="Clear('4')">4</button>
+                <button onclick="Clear('5')">5</button>
+                <button onclick="Clear('6')">6</button>
+                <button onclick="Clear('-')">-</button>
+                <button onclick="Clear('1')">1</button>
+                <button onclick="Clear('2')">2</button>
+                <button onclick="Clear('3')">3</button>
+                <button onclick="Clear('+')">+</button>
+                <button onclick="Clear('.')">.</button>
+                <button onclick="Clear('0')">0</button>
+                <button onclick="Calculate()" class="equal">=</button>
+
+            </div>
+        </div>
+        <script>
+            let outputScreen = document.getElementById("output-Screen");
+
+            function Clear(num){
+                outputScreen.value += num;
+            }
+            function Calculate(){
+                try{
+                    outputScreen.value = eval(outputScreen.value);
+
+                }
+                catch(err){
+                    alert("Invalid")
+                }
+            }
+            function Clea(){
+                outputScreen.value ="";
+            }
+            function del(){
+                outputScreen.value =outputScreen.value.slice(0,-1);
+            }
+        </script>
+    </body>
+</html>
